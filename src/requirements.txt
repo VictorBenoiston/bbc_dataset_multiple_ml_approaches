@@ -1,0 +1,10 @@
+keras
+nltk
+pydot
+scikeras
+scikit-learn
+seaborn
+tensorflow
+tensorflow-hub
+visualkeras
+wordcloud
