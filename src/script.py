@@ -295,7 +295,7 @@ token = list(abbreviations.keys())
 comment_words = ''
 stopWords = set(STOPWORDS)
 
-
+# Wordcloud for tokens (abbreviations)
 for i in range(len(token)):
     token[i] = token[i].lower()
 
@@ -313,6 +313,31 @@ plt.axis("off")
 plt.tight_layout(pad = 0)
 
 plt.show()
+
+#Generating Word Cloud for text content
+
+text = ''
+stopWords = set(STOPWORDS)
+
+
+for text_fragment in df['text']:
+
+    text += "".join(text_fragment)+""
+
+
+wordcloud = WordCloud(width = 800, height = 800,
+                background_color ='white',
+                stopwords = stopWords,
+                min_font_size = 10).generate(text)
+
+# plot the WordCloud image
+plt.figure(figsize = (8, 8), facecolor = None)
+plt.imshow(wordcloud)
+plt.axis("off")
+plt.tight_layout(pad = 0)
+
+plt.show()
+
 
 # Remove all URLs, replace by URL
 def remove_URL(text):
